@@ -1,27 +1,28 @@
-#ifndef BEGINBUTTON_H
-#define BEGINBUTTON_H
-
 #include <QPushButton>
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QtDebug>
 #include <QPainter>
 #include <QImage>
-#include "detect.h"
+#include <iostream>
+#ifndef BEGINBUTTON_H
+#define BEGINBUTTON_H
 
-class BeginButton : public QPushButton ,public Detect
+class BeginButton : public QPushButton
 {
     Q_OBJECT
 public:
     explicit BeginButton(QWidget *parent = nullptr);
     void SetDetectParam(QAbstractButton* button);
     void BeginDetect();
-    void DoDetect();
 signals:
-    void Quit();
+    void Begin(std::string* , std::string*,int* ,int*);
+    void End();
 private:
     int *sensitivity =NULL;
     int *threhold= NULL;
+    std::string* detectMode = NULL;
+    std::string* detectMethod = NULL;
     int checkParam();
 };
 

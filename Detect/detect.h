@@ -9,22 +9,23 @@ class Detect
 {
 
 public:
-    Detect();
+    Detect(std::string* , std::string*,int* ,int*);
     ~Detect();
     Mat *Images=NULL;                //array store the in and out images
     bool *Flag=NULL;                 //show if there is a fire
     VideoCapture * Video = NULL;        //to read the video
     VideoWriter *VideoSave = NULL;     //to save the video
-    String * DetectMode = NULL;
-    String * DetectMethod = NULL;
-    String * DetectPath = NULL;
+    std::string* DetectMode = NULL;
+    std::string* DetectMethod = NULL;
+    std::string* DetectPath = NULL;
+    int *sensitivity =NULL;
+    int *threhold= NULL;
     //空指针问题要注意，今天调试失败在空指针上
 
-
     int OpenCamera();
-    int OpenCvDetect();
-    int CnnDetect();
-    int OpenCvAndCnnDetect();
+    static int OpenCvDetect();
+    static int CnnDetect();
+    static int OpenCvAndCnnDetect();
     int SaveVideo();
 };
 

@@ -36,11 +36,11 @@ UI::UI(QWidget *parent)
     //set radio button to choose the mode used in detect
     buttonGroupOfDetectAlgorithm = new QButtonGroup(this);
     buttonGroupOfDetectMode = new QButtonGroup(this);
-    radioButtonOfBoth = new QRadioButton("Yolo Opencv",this);
+    radioButtonOfBoth = new QRadioButton("Cnn Opencv",this);
     radioButtonOfOfflineDetect = new QRadioButton("离线检测",this);
     radioButtonOfOnlineDetect = new QRadioButton("实时检测",this);
     radioButtonOfOpencv = new QRadioButton("Opencv",this);
-    radioButtonOfYolo = new QRadioButton("Yolo",this);
+    radioButtonOfYolo = new QRadioButton("Cnn",this);
     buttonGroupOfDetectMode->addButton(radioButtonOfOnlineDetect,0);
     buttonGroupOfDetectMode->addButton(radioButtonOfOfflineDetect,1);
     buttonGroupOfDetectAlgorithm->addButton(radioButtonOfBoth,0);
@@ -59,15 +59,47 @@ UI::UI(QWidget *parent)
     radioButtonOfYolo->move(1080,380);
     radioButtonOfBoth->move(990,420);
 
+    //timer
+    readAndWriteTimer = new QTimer(this);
+
 
     connect(buttonGroupOfDetectMode,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
     connect(buttonGroupOfDetectAlgorithm,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
     connect(buttonOfBegin,&BeginButton::clicked,buttonOfBegin,&BeginButton::BeginDetect);
+    connect(buttonOfBegin,&BeginButton::Begin,this,&UI::beginInitial);
+    connect(readAndWriteTimer,&QTimer::timeout,this,&UI::detectOneFrame);
+
 }
 
 UI::~UI()
 {
-    detectThread->quit();
 }
 
+/*--------------------------------------------------------------------------beign initial----------------------------------------------------*/
+//input [detectmode , detectmethod , sensitivity , thredhold]
 
+void UI::beginInitial(std::string* dm , std::string*dmd,int* sen ,int*thr){
+    if(this->detect==NULL)
+    {
+        this->detect = new Detect(dm,dmd,sen,thr);
+        qDebug() << QString::fromStdString(*detect->DetectMethod) ;
+    }
+
+    //set timer every 30ms read and write one frame
+    this->readAndWriteTimer->start(30);
+    this->detect->OpenCamera();
+}
+
+/*--------------------------------------------------------------------------detect one frame----------------------------------------------------*/
+void UI::detectOneFrame(){
+    int (*detectPtr)()= NULL;
+    if(*detect->DetectMethod=="Opencv"){
+        detectPtr = detect->OpenCvDetect;
+    }else if(*detect->DetectMethod=="Cnn"){
+        detectPtr = detect->CnnDetect;
+    }else{
+        detectPtr = detect->OpenCvAndCnnDetect;
+    }
+
+
+}

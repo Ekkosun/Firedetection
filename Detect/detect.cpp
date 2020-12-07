@@ -1,13 +1,15 @@
 #include "detect.h"
 
-Detect::Detect(){
+Detect::Detect(std::string* dm , std::string*dmd ,int*sen ,int*thr){
     this->Images = new Mat[4];
     this->Flag = new bool;
-    this->DetectMode = new String;
-    this->DetectMethod = new String;
+    this->DetectMode = dm;
+    this->DetectMethod = dmd;
+    this->sensitivity = sen ;
+    this->threhold = thr;
     this->Video = new VideoCapture;
     this->VideoSave = new VideoWriter;
-    this->DetectPath = new String;
+    this->DetectPath = new std::string;
 }
 
 Detect::~Detect(){

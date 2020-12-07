@@ -1,29 +1,34 @@
 #include "beginbutton.h"
 
+
 BeginButton::BeginButton(QWidget *parent) : QPushButton(parent)
 {
     sensitivity = new int;
     threhold = new int;
+    detectMode = new std::string;
+    detectMethod = new std::string;
 }
 
 void BeginButton::SetDetectParam(QAbstractButton *button){
     if(button->text()=="实时检测"||button->text()=="离线检测"){
-        *this->DetectMode = button->text().toStdString();
+        *this->detectMode = button->text().toStdString();
+        //qDebug() << QString::fromStdString(*detectMode) ;
     }
-    else if(button->text()=="Opencv"||button->text()=="Yolo"||button->text()=="Yolo Opencv"){
-        *this->DetectMethod = button->text().toStdString();
+    else if(button->text()=="Opencv"||button->text()=="Cnn"||button->text()=="Cnn Opencv"){
+        *this->detectMethod = button->text().toStdString();
+        //qDebug() << QString::fromStdString(*detectMethod) ;
     }
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Check The Mode And Method~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 //output : [-1:"Param is not enough",0:"Ok"]
 int BeginButton::checkParam(){
-    if(*this->DetectMode==""){
+    if(*this->detectMode==""){
         QMessageBox::warning(this,"Error","检测模式是必须选择的，请选择一种检测模式！！");
         return -1;
     }
 
-    if(*this->DetectMethod==""){
+    if(*this->detectMethod==""){
         QMessageBox::warning(this,"Error","检测方式是必须选择的，请选择一种检测方式！！");
         return -1;
     }
@@ -40,25 +45,18 @@ void BeginButton::BeginDetect(){
         if(this->checkParam()==-1)
             return ;
         this->setText("结束检测");
+        emit Begin(this->detectMode,this->detectMethod,this->sensitivity,this->threhold);
         }
 
     else{
 
         this->setText("开始检测");
+        emit End();
     }
 
 }
 
-void BeginButton::DoDetect(){
-    if(*this->DetectMode == "实时检测"){
-        this->OpenCamera();
-    }else if(*this->DetectMode == "离线检测"){
-        *this->DetectPath = QFileDialog::getOpenFileName(nullptr,"打开文件","/","Files(*.avi *.mp4)").toStdString();
-        this->OpenCamera();
-    }else{
-    }
 
-}
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Worker Class~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

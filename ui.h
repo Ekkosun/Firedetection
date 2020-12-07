@@ -9,6 +9,7 @@
 #include <QButtonGroup>
 #include <QFileDialog>
 #include <QThread>
+#include <QTimer>
 #include "beginbutton.h"
 #include "detect.h"
 
@@ -44,9 +45,12 @@ public:
     QRadioButton* radioButtonOfBoth= NULL;
 
     //timer to read frame
-    QTimer* readFrameTimer = NULL;
+    QTimer* readAndWriteTimer = NULL;
 
+    Detect* detect = NULL ;
 
+    void beginInitial(std::string* , std::string*,int* ,int*);
+    void detectOneFrame();
 };
 
 #endif // UI_H
