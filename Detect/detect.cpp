@@ -1,7 +1,7 @@
 #include "detect.h"
 
-Detect::Detect(std::string* dm , std::string*dmd ,int*sen ,int*thr){
-    this->Images = new Mat[4];
+Detect::Detect(std::string* dm , std::string*dmd ,std::string*path,int*sen ,int*thr){
+    this->Images = new Mat[3];
     this->Flag = new bool;
     this->DetectMode = dm;
     this->DetectMethod = dmd;
@@ -9,7 +9,7 @@ Detect::Detect(std::string* dm , std::string*dmd ,int*sen ,int*thr){
     this->threhold = thr;
     this->Video = new VideoCapture;
     this->VideoSave = new VideoWriter;
-    this->DetectPath = new std::string;
+    this->DetectPath = path;
 }
 
 Detect::~Detect(){

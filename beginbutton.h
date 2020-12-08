@@ -16,13 +16,14 @@ public:
     void SetDetectParam(QAbstractButton* button);
     void BeginDetect();
 signals:
-    void Begin(std::string* , std::string*,int* ,int*);
+    void Begin(std::string* , std::string*,std::string*,int* ,int*);
     void End();
 private:
     int *sensitivity =NULL;
     int *threhold= NULL;
     std::string* detectMode = NULL;
     std::string* detectMethod = NULL;
+    std::string* videoPath = NULL;
     int checkParam();
 };
 

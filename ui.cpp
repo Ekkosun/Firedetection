@@ -67,6 +67,7 @@ UI::UI(QWidget *parent)
     connect(buttonGroupOfDetectAlgorithm,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
     connect(buttonOfBegin,&BeginButton::clicked,buttonOfBegin,&BeginButton::BeginDetect);
     connect(buttonOfBegin,&BeginButton::Begin,this,&UI::beginInitial);
+    connect(buttonOfBegin,&BeginButton::End,this,&UI::endDetect);
     connect(readAndWriteTimer,&QTimer::timeout,this,&UI::detectOneFrame);
 
 }
@@ -76,12 +77,12 @@ UI::~UI()
 }
 
 /*--------------------------------------------------------------------------beign initial----------------------------------------------------*/
-//input [detectmode , detectmethod , sensitivity , thredhold]
+//input [detectmode , detectmethod ,videopath, sensitivity , thredhold]
 
-void UI::beginInitial(std::string* dm , std::string*dmd,int* sen ,int*thr){
+void UI::beginInitial(std::string* dm , std::string*dmd,std::string* path,int* sen ,int*thr){
     if(this->detect==NULL)
     {
-        this->detect = new Detect(dm,dmd,sen,thr);
+        this->detect = new Detect(dm,dmd,path,sen,thr);
         qDebug() << QString::fromStdString(*detect->DetectMethod) ;
     }
 
@@ -99,6 +100,42 @@ void UI::detectOneFrame(){
         detectPtr = detect->CnnDetect;
     }else{
         detectPtr = detect->OpenCvAndCnnDetect;
+    }
+    detect->Video->read(detect->Images[0]);
+    //handle the image
+
+
+
+    //连续12帧存在火焰则证明有火，
+
+
+
+    //show the image read and handled ，Opencv: 0.原图 1.带有标记的图 2.二值化图像
+    //Cnn 0.原图 1.标记图 2.热力图
+    //
+    QImage img = QImage((const unsigned char*)(detect->Images[0].data),detect->Images[0].cols,detect->Images[0].rows,QImage::Format_RGB888);
+
+    this->imageLabel0->setPixmap(QPixmap::fromImage(img));
+
+}
+/*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
+void UI::endDetect(){
+    readAndWriteTimer->stop();
+    //stop video capture
+    if(detect->Video->isOpened()){
+        detect->Video->release();
+    }
+    //clear the lable
+
+
+    //
+}
+/*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
+//input:[ptr of images , num to display]
+void UI::imshow(Mat*images,int num){
+    imageLabel0 = new QLabel[num];
+    for(int i = 0 ; i<4 ;i++){
+        imageLabel0[i].setParent(this);
     }
 
 

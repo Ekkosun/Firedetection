@@ -9,7 +9,7 @@ class Detect
 {
 
 public:
-    Detect(std::string* , std::string*,int* ,int*);
+    Detect(std::string* , std::string*,std::string*,int* ,int*);
     ~Detect();
     Mat *Images=NULL;                //array store the in and out images
     bool *Flag=NULL;                 //show if there is a fire

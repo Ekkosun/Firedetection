@@ -7,6 +7,7 @@ BeginButton::BeginButton(QWidget *parent) : QPushButton(parent)
     threhold = new int;
     detectMode = new std::string;
     detectMethod = new std::string;
+    videoPath = new std::string;
 }
 
 void BeginButton::SetDetectParam(QAbstractButton *button){
@@ -32,7 +33,9 @@ int BeginButton::checkParam(){
         QMessageBox::warning(this,"Error","检测方式是必须选择的，请选择一种检测方式！！");
         return -1;
     }
-
+    if(*this->detectMode=="离线检测"){
+        *this->videoPath = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
+    }
     return 0;
 
 }
@@ -45,7 +48,7 @@ void BeginButton::BeginDetect(){
         if(this->checkParam()==-1)
             return ;
         this->setText("结束检测");
-        emit Begin(this->detectMode,this->detectMethod,this->sensitivity,this->threhold);
+        emit Begin(this->detectMode,this->detectMethod,this->videoPath,this->sensitivity,this->threhold);
         }
 
     else{
@@ -59,5 +62,4 @@ void BeginButton::BeginDetect(){
 
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Worker Class~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 

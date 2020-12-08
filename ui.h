@@ -44,13 +44,17 @@ public:
     QRadioButton* radioButtonOfYolo= NULL;
     QRadioButton* radioButtonOfBoth= NULL;
 
+    //label to show image
+    QLabel* imageLabel0 = NULL;
     //timer to read frame
     QTimer* readAndWriteTimer = NULL;
 
     Detect* detect = NULL ;
 
-    void beginInitial(std::string* , std::string*,int* ,int*);
+    void beginInitial(std::string* , std::string*,std::string*,int* ,int*);
     void detectOneFrame();
+    void endDetect();
+    void imshow(Mat* , int );
 };
 
 #endif // UI_H
