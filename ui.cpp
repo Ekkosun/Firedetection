@@ -62,6 +62,13 @@ UI::UI(QWidget *parent)
     //timer
     readAndWriteTimer = new QTimer(this);
 
+    //imageshow
+    imageLabel = new QLabel[3];
+    for(int i=0;i<3;i++){
+        imageLabel[i].setParent(this);
+        imageLabel[i].resize(300,400);
+        imageLabel[i].move(300*i,0);
+    }
 
     connect(buttonGroupOfDetectMode,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
     connect(buttonGroupOfDetectAlgorithm,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
@@ -101,21 +108,25 @@ void UI::detectOneFrame(){
     }else{
         detectPtr = detect->OpenCvAndCnnDetect;
     }
+
     detect->Video->read(detect->Images[0]);
+    if(detect->Images[0].empty()){
+        clearLabel();
+        emit buttonOfBegin->End();
+        return;
+    }
+    detect->Images[1]=detect->Images[0];
+    detect->Images[2]=detect->Images[0];
     //handle the image
 
-
-
+    imshow(detect->Images,3);
     //连续12帧存在火焰则证明有火，
 
 
 
     //show the image read and handled ，Opencv: 0.原图 1.带有标记的图 2.二值化图像
     //Cnn 0.原图 1.标记图 2.热力图
-    //
-    QImage img = QImage((const unsigned char*)(detect->Images[0].data),detect->Images[0].cols,detect->Images[0].rows,QImage::Format_RGB888);
 
-    this->imageLabel0->setPixmap(QPixmap::fromImage(img));
 
 }
 /*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
@@ -125,18 +136,29 @@ void UI::endDetect(){
     if(detect->Video->isOpened()){
         detect->Video->release();
     }
-    //clear the lable
+    if(buttonOfBegin->text()=="结束检测"){
 
+        buttonOfBegin->setText("开始检测");
+    }
+    //clear the lable
+    clearLabel();
 
     //
 }
 /*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
 //input:[ptr of images , num to display]
-void UI::imshow(Mat*images,int num){
-    imageLabel0 = new QLabel[num];
-    for(int i = 0 ; i<4 ;i++){
-        imageLabel0[i].setParent(this);
+void UI::imshow(cv::Mat*images,int num){
+    cvtColor(images[0],images[0],cv::COLOR_BGR2RGB);
+    for(int i = 0 ; i<num ;i++){
+        QImage img = QImage((const unsigned char*)(images[i].data),images[i].cols,images[i].rows,QImage::Format_RGB888);
+        imageLabel[i].setPixmap(QPixmap::fromImage(img));
     }
 
+}
+/*--------------------------------------------------------------------------clear Label----------------------------------------------------*/
 
+void UI::clearLabel(){
+    for (int i=0; i<3 ;i++ ) {
+        this->imageLabel[i].clear();
+    }
 }

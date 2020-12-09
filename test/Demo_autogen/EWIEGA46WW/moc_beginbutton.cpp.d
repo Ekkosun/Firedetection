@@ -19,12 +19,10 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_string.tcc \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/c++0x_warning.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/char_traits.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/concept_check.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cpp_type_traits.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cxxabi_forced.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/cxxabi_init_exception.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/deque.tcc \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/enable_special_members.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/exception_defines.h \
@@ -38,11 +36,8 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/list.tcc \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_classes.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_conv.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets_nonio.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets_nonio.tcc \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/localefwd.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/memoryfwd.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/move.h \
@@ -53,21 +48,17 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/predefined_ops.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ptr_traits.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/quoted_string.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/range_access.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/refwrap.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_atomic.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/shared_ptr_base.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/specfun.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/sstream.tcc \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_abs.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/std_function.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algo.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_algobase.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_bvector.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_construct.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_deque.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_function.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_heap.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_iterator.h \
@@ -76,13 +67,10 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_list.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_map.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_multimap.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_multiset.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_numeric.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_pair.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_queue.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_raw_storage_iter.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_relops.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_set.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tempbuf.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_tree.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stl_uninitialized.h \
@@ -96,24 +84,15 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/unique_ptr.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/uses_allocator.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/vector.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cassert \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cctype \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cfloat \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/climits \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/clocale \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cmath \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/complex \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstddef \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdio \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdlib \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstring \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ctime \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwchar \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cwctype \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/debug/assertions.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/debug/debug.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/deque \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/exception \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/aligned_buffer.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/alloc_traits.h \
@@ -125,7 +104,6 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ext/type_traits.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/functional \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/initializer_list \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iomanip \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iosfwd \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
@@ -133,35 +111,17 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iterator \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/limits \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/list \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/locale \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/map \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/math.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/memory \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/mutex \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/new \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/numeric \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/optional \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/queue \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/set \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/sstream \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdexcept \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/stdlib.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/streambuf \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/string_view \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/bessel_function.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/beta_function.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/ell_integral.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/exp_integral.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/gamma.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/hypergeometric.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/legendre_function.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/modified_bessel_func.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/poly_hermite.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/poly_laguerre.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/riemann_zeta.tcc \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tr1/special_function_util.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/tuple \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/type_traits \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/typeinfo \
@@ -177,17 +137,10 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/emmintrin.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/float.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/mm_malloc.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/mmintrin.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdarg.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdint.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/xmmintrin.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
@@ -195,7 +148,6 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/_timeval.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/assert.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -206,7 +158,6 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/pthread.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
@@ -220,11 +171,9 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/time.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/vadefs.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/wchar.h \
   D:/MGW/x86_64-8.1.0-release-win32-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/wctype.h \
-  D:/ProgramDemo/Demo/Detect/detect.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/QtDebug \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qalgorithms.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qarraydata.h \
@@ -241,6 +190,10 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/QT/5.15.1/mingw81_64/include/QtCore/qcontiguouscache.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qdatastream.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qdebug.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qdir.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qfile.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qfiledevice.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qfileinfo.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qflags.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qgenericatomic.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qglobal.h \
@@ -285,10 +238,13 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/QT/5.15.1/mingw81_64/include/QtCore/qtcore-config.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qtextstream.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qtypeinfo.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qurl.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qvariant.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qvarlengtharray.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qvector.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qversiontagging.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/QImage \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/QPainter \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qbrush.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qcolor.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qcursor.h \
@@ -300,123 +256,30 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_beginbutton.cpp: D:/Program
   D:/QT/5.15.1/mingw81_64/include/QtGui/qkeysequence.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qmatrix.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpaintdevice.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/qpainter.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpalette.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/qpen.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpixelformat.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpixmap.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpolygon.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qregion.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qrgb.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qrgba64.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/qtextoption.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qtgui-config.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qtguiglobal.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qtransform.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qwindowdefs.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qwindowdefs_win.h \
+  D:/QT/5.15.1/mingw81_64/include/QtWidgets/QFileDialog \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/QMessageBox \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/QPushButton \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qdialog.h \
+  D:/QT/5.15.1/mingw81_64/include/QtWidgets/qfiledialog.h \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qmessagebox.h \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qpushbutton.h \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qsizepolicy.h \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qtwidgets-config.h \
   D:/QT/5.15.1/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
-  D:/QT/5.15.1/mingw81_64/include/QtWidgets/qwidget.h \
-  D:/opencv/OpenCV/include/opencv2/calib3d.hpp \
-  D:/opencv/OpenCV/include/opencv2/core.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/affine.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/base.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/bufferpool.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/check.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/cuda.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/cuda.inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/cuda_types.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/cv_cpu_dispatch.h \
-  D:/opencv/OpenCV/include/opencv2/core/cvdef.h \
-  D:/opencv/OpenCV/include/opencv2/core/cvstd.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/cvstd.inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/cvstd_wrapper.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/fast_math.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/hal/interface.h \
-  D:/opencv/OpenCV/include/opencv2/core/mat.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/mat.inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/matx.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/neon_utils.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/operations.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/optim.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/ovx.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/persistence.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/saturate.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/traits.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/types.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/utility.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/version.hpp \
-  D:/opencv/OpenCV/include/opencv2/core/vsx_utils.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn/dict.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn/dnn.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn/dnn.inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn/layer.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn/utils/inference_engine.hpp \
-  D:/opencv/OpenCV/include/opencv2/dnn/version.hpp \
-  D:/opencv/OpenCV/include/opencv2/features2d.hpp \
-  D:/opencv/OpenCV/include/opencv2/flann.hpp \
-  D:/opencv/OpenCV/include/opencv2/flann/all_indices.h \
-  D:/opencv/OpenCV/include/opencv2/flann/allocator.h \
-  D:/opencv/OpenCV/include/opencv2/flann/any.h \
-  D:/opencv/OpenCV/include/opencv2/flann/autotuned_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/composite_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/config.h \
-  D:/opencv/OpenCV/include/opencv2/flann/defines.h \
-  D:/opencv/OpenCV/include/opencv2/flann/dist.h \
-  D:/opencv/OpenCV/include/opencv2/flann/dynamic_bitset.h \
-  D:/opencv/OpenCV/include/opencv2/flann/flann_base.hpp \
-  D:/opencv/OpenCV/include/opencv2/flann/general.h \
-  D:/opencv/OpenCV/include/opencv2/flann/ground_truth.h \
-  D:/opencv/OpenCV/include/opencv2/flann/heap.h \
-  D:/opencv/OpenCV/include/opencv2/flann/hierarchical_clustering_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/index_testing.h \
-  D:/opencv/OpenCV/include/opencv2/flann/kdtree_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/kdtree_single_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/kmeans_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/linear_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/logger.h \
-  D:/opencv/OpenCV/include/opencv2/flann/lsh_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/lsh_table.h \
-  D:/opencv/OpenCV/include/opencv2/flann/matrix.h \
-  D:/opencv/OpenCV/include/opencv2/flann/miniflann.hpp \
-  D:/opencv/OpenCV/include/opencv2/flann/nn_index.h \
-  D:/opencv/OpenCV/include/opencv2/flann/params.h \
-  D:/opencv/OpenCV/include/opencv2/flann/random.h \
-  D:/opencv/OpenCV/include/opencv2/flann/result_set.h \
-  D:/opencv/OpenCV/include/opencv2/flann/sampling.h \
-  D:/opencv/OpenCV/include/opencv2/flann/saving.h \
-  D:/opencv/OpenCV/include/opencv2/flann/timer.h \
-  D:/opencv/OpenCV/include/opencv2/highgui.hpp \
-  D:/opencv/OpenCV/include/opencv2/highgui/highgui.hpp \
-  D:/opencv/OpenCV/include/opencv2/imgcodecs.hpp \
-  D:/opencv/OpenCV/include/opencv2/imgproc.hpp \
-  D:/opencv/OpenCV/include/opencv2/imgproc/imgproc.hpp \
-  D:/opencv/OpenCV/include/opencv2/ml.hpp \
-  D:/opencv/OpenCV/include/opencv2/ml/ml.inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/objdetect.hpp \
-  D:/opencv/OpenCV/include/opencv2/objdetect/detection_based_tracker.hpp \
-  D:/opencv/OpenCV/include/opencv2/opencv.hpp \
-  D:/opencv/OpenCV/include/opencv2/opencv_modules.hpp \
-  D:/opencv/OpenCV/include/opencv2/photo.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/blenders.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/camera.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/exposure_compensate.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/matchers.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/motion_estimators.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/seam_finders.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/util.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/util_inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/warpers.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/detail/warpers_inl.hpp \
-  D:/opencv/OpenCV/include/opencv2/stitching/warpers.hpp \
-  D:/opencv/OpenCV/include/opencv2/video.hpp \
-  D:/opencv/OpenCV/include/opencv2/video/background_segm.hpp \
-  D:/opencv/OpenCV/include/opencv2/video/tracking.hpp \
-  D:/opencv/OpenCV/include/opencv2/videoio.hpp
+  D:/QT/5.15.1/mingw81_64/include/QtWidgets/qwidget.h

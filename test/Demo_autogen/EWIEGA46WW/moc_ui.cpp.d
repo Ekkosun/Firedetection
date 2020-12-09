@@ -228,12 +228,14 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_ui.cpp: D:/ProgramDemo/Demo
   D:/ProgramDemo/Demo/Detect/detect.h \
   D:/ProgramDemo/Demo/beginbutton.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/QThread \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/QTimer \
   D:/QT/5.15.1/mingw81_64/include/QtCore/QtDebug \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qalgorithms.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qarraydata.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qatomic.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qatomic_cxx11.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qbasicatomic.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qbasictimer.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qbytearray.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qbytearraylist.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qchar.h \
@@ -294,12 +296,15 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_ui.cpp: D:/ProgramDemo/Demo
   D:/QT/5.15.1/mingw81_64/include/QtCore/qtcore-config.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qtextstream.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qthread.h \
+  D:/QT/5.15.1/mingw81_64/include/QtCore/qtimer.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qtypeinfo.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qurl.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qvariant.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qvarlengtharray.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qvector.h \
   D:/QT/5.15.1/mingw81_64/include/QtCore/qversiontagging.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/QImage \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/QPainter \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qbrush.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qcolor.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qcursor.h \
@@ -311,13 +316,16 @@ D:/ProgramDemo/Demo/test/Demo_autogen/EWIEGA46WW/moc_ui.cpp: D:/ProgramDemo/Demo
   D:/QT/5.15.1/mingw81_64/include/QtGui/qkeysequence.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qmatrix.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpaintdevice.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/qpainter.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpalette.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/qpen.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpixelformat.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpixmap.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qpolygon.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qregion.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qrgb.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qrgba64.h \
+  D:/QT/5.15.1/mingw81_64/include/QtGui/qtextoption.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qtgui-config.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qtguiglobal.h \
   D:/QT/5.15.1/mingw81_64/include/QtGui/qtransform.h \

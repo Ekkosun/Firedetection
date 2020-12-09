@@ -45,7 +45,8 @@ public:
     QRadioButton* radioButtonOfBoth= NULL;
 
     //label to show image
-    QLabel* imageLabel0 = NULL;
+    QLabel* imageLabel = NULL;
+
     //timer to read frame
     QTimer* readAndWriteTimer = NULL;
 
@@ -55,6 +56,7 @@ public:
     void detectOneFrame();
     void endDetect();
     void imshow(Mat* , int );
+    void clearLabel();
 };
 
 #endif // UI_H
