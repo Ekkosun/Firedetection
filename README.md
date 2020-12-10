@@ -16,32 +16,27 @@
 
 **后续设计计划：**
 
-* 加入一个定时器，时序图如下
+* 加入定时器控制读写
 
 * 定时器控制图片的采集、检测、显示
 
-  ```mermaid
-  graph LR;
-  
-  A(DetectButtonOff)--clicked-->B(Start Timer)
-  A--clicked-->D(DetectButtonOn)
-D(DetectButtonOn)--clicked-->A
-  D--clicked-->E(End Timer)
-
-  ```
-
-  
-  
-  
-  
   
 
 #### 12.7日
 
-使用timer进行周期性的读取帧数进行检测，目前还没解决的问题，离线视频读取（因为更改了一次代码过后，忘记将源代码的文件读取进行保留）
+`Finished：`使用timer进行周期性的读取帧数进行检测，目前还没解决的问题，离线视频读取（
 
 
 
 #### 12.8日
 
 了解QT布局，将展示的画面进行良好规划。
+
+
+
+#### 12.9日
+
+`Finished:`使用`Opencv`进行检测，检测阈值可调。
+
+`Unfinished:`离线视频读取后，记住离线视频的地址，方便下次打开同一目录下的视频。把亮度的判断进行优化。
+

@@ -57,6 +57,7 @@ public:
     void endDetect();
     void imshow(Mat* , int );
     void clearLabel();
+    void scaleAtEqualScale(int i);
 };
 
 #endif // UI_H

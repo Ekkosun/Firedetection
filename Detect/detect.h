@@ -23,9 +23,9 @@ public:
     //空指针问题要注意，今天调试失败在空指针上
 
     int OpenCamera();
-    static int OpenCvDetect();
-    static int CnnDetect();
-    static int OpenCvAndCnnDetect();
+    static int OpenCvDetect(Mat *,double );
+    static int CnnDetect(Mat *,double);
+    static int OpenCvAndCnnDetect(Mat *,double );
     int SaveVideo();
 };
 

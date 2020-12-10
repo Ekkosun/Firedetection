@@ -17,9 +17,11 @@ UI::UI(QWidget *parent)
     sliderOfSensitivity->resize(160,22);
     sliderOfThrehold->resize(160,22);
     sliderOfSensitivity->setMinimum(1);
-    sliderOfSensitivity->setMaximum(100);
+    sliderOfSensitivity->setMaximum(500);
+    //sliderOfSensitivity->setSingleStep(1);
     sliderOfThrehold->setMinimum(1);
-    sliderOfThrehold->setMaximum(100);
+    sliderOfThrehold->setMaximum(500);
+    //sliderOfThrehold->setSingleStep(1);
     //set the positon of slider
     sliderOfSensitivity->move(990,600);
     sliderOfThrehold->move(990,540);
@@ -36,7 +38,7 @@ UI::UI(QWidget *parent)
     //set radio button to choose the mode used in detect
     buttonGroupOfDetectAlgorithm = new QButtonGroup(this);
     buttonGroupOfDetectMode = new QButtonGroup(this);
-    radioButtonOfBoth = new QRadioButton("Cnn Opencv",this);
+    radioButtonOfBoth = new QRadioButton("Cnn Opencv");
     radioButtonOfOfflineDetect = new QRadioButton("离线检测",this);
     radioButtonOfOnlineDetect = new QRadioButton("实时检测",this);
     radioButtonOfOpencv = new QRadioButton("Opencv",this);
@@ -55,8 +57,8 @@ UI::UI(QWidget *parent)
     //set the position of radio button
     radioButtonOfOnlineDetect->move(990,480);
     radioButtonOfOfflineDetect->move(1080,480);
-    radioButtonOfOpencv->move(990,380);
-    radioButtonOfYolo->move(1080,380);
+    radioButtonOfOpencv->move(990,455);
+    radioButtonOfYolo->move(1080,455);
     radioButtonOfBoth->move(990,420);
 
     //timer
@@ -64,12 +66,14 @@ UI::UI(QWidget *parent)
 
     //imageshow
     imageLabel = new QLabel[3];
-    for(int i=0;i<3;i++){
+    for (int i=0 ;i<3;i++)
         imageLabel[i].setParent(this);
-        imageLabel[i].resize(300,400);
-        imageLabel[i].move(300*i,0);
-    }
-
+    imageLabel[0].resize(800,680);
+    imageLabel[1].resize(300,220);
+    imageLabel[2].resize(300,220);
+    imageLabel[0].move(20,20);
+    imageLabel[1].move(860,20);
+    imageLabel[2].move(860,240);
     connect(buttonGroupOfDetectMode,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
     connect(buttonGroupOfDetectAlgorithm,static_cast<void(QButtonGroup::*)(QAbstractButton*)>(&QButtonGroup::buttonClicked),buttonOfBegin,&BeginButton::SetDetectParam);
     connect(buttonOfBegin,&BeginButton::clicked,buttonOfBegin,&BeginButton::BeginDetect);
@@ -94,13 +98,13 @@ void UI::beginInitial(std::string* dm , std::string*dmd,std::string* path,int* s
     }
 
     //set timer every 30ms read and write one frame
-    this->readAndWriteTimer->start(30);
+    this->readAndWriteTimer->start(40);
     this->detect->OpenCamera();
 }
 
 /*--------------------------------------------------------------------------detect one frame----------------------------------------------------*/
 void UI::detectOneFrame(){
-    int (*detectPtr)()= NULL;
+    int (*detectPtr)(Mat*,double)= NULL;
     if(*detect->DetectMethod=="Opencv"){
         detectPtr = detect->OpenCvDetect;
     }else if(*detect->DetectMethod=="Cnn"){
@@ -115,18 +119,14 @@ void UI::detectOneFrame(){
         emit buttonOfBegin->End();
         return;
     }
-    detect->Images[1]=detect->Images[0];
-    detect->Images[2]=detect->Images[0];
     //handle the image
-
-    imshow(detect->Images,3);
-    //连续12帧存在火焰则证明有火，
-
-
+    detectPtr(detect->Images,this->sliderOfSensitivity->value()/100.0);
+    for (int i =0 ;i<3 ;i++ )
+        scaleAtEqualScale(i);
 
     //show the image read and handled ，Opencv: 0.原图 1.带有标记的图 2.二值化图像
     //Cnn 0.原图 1.标记图 2.热力图
-
+    imshow(detect->Images,3);
 
 }
 /*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
@@ -148,9 +148,11 @@ void UI::endDetect(){
 /*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
 //input:[ptr of images , num to display]
 void UI::imshow(cv::Mat*images,int num){
-    cvtColor(images[0],images[0],cv::COLOR_BGR2RGB);
+    QImage img;
     for(int i = 0 ; i<num ;i++){
-        QImage img = QImage((const unsigned char*)(images[i].data),images[i].cols,images[i].rows,QImage::Format_RGB888);
+        cvtColor(images[i],images[i],cv::COLOR_BGR2RGB);
+
+        img = QImage((const unsigned char*)(images[i].data),images[i].cols,images[i].rows,QImage::Format_RGB888);
         imageLabel[i].setPixmap(QPixmap::fromImage(img));
     }
 
@@ -161,4 +163,18 @@ void UI::clearLabel(){
     for (int i=0; i<3 ;i++ ) {
         this->imageLabel[i].clear();
     }
+}
+/*--------------------------------------------------------------------------scale at equal scale----------------------------------------------------*/
+void UI::scaleAtEqualScale(int i){
+    double weight_scale , height_scale,weight,height,weightoflabel,heightoflabel;
+    weightoflabel = this->imageLabel[i].width();
+    heightoflabel = this->imageLabel[i].height();
+    weight = detect->Images[i].cols;
+    height = detect->Images[i].rows;
+    weight_scale = weight/weightoflabel;
+    height_scale = height/heightoflabel;
+    if(weight/height_scale>=heightoflabel)
+        cv::resize(detect->Images[i],detect->Images[i],cv::Size(int(weight/weight_scale),int(height/weight_scale)));
+    else
+        cv::resize(detect->Images[i],detect->Images[i],cv::Size(int(weight/min(weight_scale,height_scale)),int(height/min(weight_scale,height_scale))));
 }
