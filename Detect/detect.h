@@ -3,8 +3,10 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/dnn.hpp"
 #include <iostream>
 using namespace cv;
+extern cv::dnn::Net* YoloNet ;
 class Detect
 {
 
@@ -30,3 +32,4 @@ public:
 };
 
 #endif // DETECT_H
+std::vector<std::string> getOutputsNames( cv::dnn::Net& net);

@@ -1,5 +1,7 @@
 #include "ui.h"
 #include <QDebug>
+int detectedFrame = 0;
+int totalFrame = 0;
 UI::UI(QWidget *parent)
     : QWidget(parent)
 {
@@ -18,10 +20,10 @@ UI::UI(QWidget *parent)
     sliderOfThrehold->resize(160,22);
     sliderOfSensitivity->setMinimum(1);
     sliderOfSensitivity->setMaximum(500);
-    //sliderOfSensitivity->setSingleStep(1);
+    sliderOfSensitivity->setSingleStep(1);
     sliderOfThrehold->setMinimum(1);
-    sliderOfThrehold->setMaximum(500);
-    //sliderOfThrehold->setSingleStep(1);
+    sliderOfThrehold->setMaximum(6);
+    sliderOfThrehold->setSingleStep(1);
     //set the positon of slider
     sliderOfSensitivity->move(990,600);
     sliderOfThrehold->move(990,540);
@@ -97,18 +99,21 @@ void UI::beginInitial(std::string* dm , std::string*dmd,std::string* path,int* s
         qDebug() << QString::fromStdString(*detect->DetectMethod) ;
     }
 
-    //set timer every 30ms read and write one frame
+    //set timer every 40ms read and write one frame
     this->readAndWriteTimer->start(40);
     this->detect->OpenCamera();
 }
 
 /*--------------------------------------------------------------------------detect one frame----------------------------------------------------*/
 void UI::detectOneFrame(){
+    int num =0;
     int (*detectPtr)(Mat*,double)= NULL;
     if(*detect->DetectMethod=="Opencv"){
         detectPtr = detect->OpenCvDetect;
+        num = 3;
     }else if(*detect->DetectMethod=="Cnn"){
         detectPtr = detect->CnnDetect;
+        num = 2;
     }else{
         detectPtr = detect->OpenCvAndCnnDetect;
     }
@@ -120,13 +125,19 @@ void UI::detectOneFrame(){
         return;
     }
     //handle the image
-    detectPtr(detect->Images,this->sliderOfSensitivity->value()/100.0);
-    for (int i =0 ;i<3 ;i++ )
+    detectedFrame += detectPtr(detect->Images,this->sliderOfSensitivity->value()/100.0);
+    totalFrame += 1;
+    if(totalFrame%6==5&&detectedFrame<=this->sliderOfThrehold->value())
+        detectedFrame = 0;
+    else{
+        //提醒并开始录入
+    }
+
+    for (int i =0 ;i<num ;i++ )
         scaleAtEqualScale(i);
 
     //show the image read and handled ，Opencv: 0.原图 1.带有标记的图 2.二值化图像
-    //Cnn 0.原图 1.标记图 2.热力图
-    imshow(detect->Images,3);
+    imshow(detect->Images,num);
 
 }
 /*--------------------------------------------------------------------------end  detecting----------------------------------------------------*/
@@ -177,4 +188,27 @@ void UI::scaleAtEqualScale(int i){
         cv::resize(detect->Images[i],detect->Images[i],cv::Size(int(weight/weight_scale),int(height/weight_scale)));
     else
         cv::resize(detect->Images[i],detect->Images[i],cv::Size(int(weight/min(weight_scale,height_scale)),int(height/min(weight_scale,height_scale))));
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Load Model~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+//Output :[-1:failed to load model,0:complete]
+int UI::loadYolo(std::string path,std::string confg,cv::dnn::Net* net){
+
+    QMessageBox::warning(this,"加载模型错误","请选择模型位置及配置文件位置！");
+    path = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
+    confg = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
+    try {
+        if(path==""|confg=="")
+            *net = cv::dnn::readNetFromDarknet("yolov3-tiny.cfg","yolov3-tiny.backup");
+        else
+            *net = cv::dnn::readNetFromDarknet(confg,path);
+        net->setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
+        net->setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+
+    }  catch (...) {
+        QMessageBox::warning(this,"Error","加载模型失败！");
+        this->radioButtonOfYolo->setDisabled(true);
+        return -1;
+
+    }
+    return 0;
 }

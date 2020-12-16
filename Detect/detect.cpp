@@ -1,5 +1,4 @@
 #include "detect.h"
-
 Detect::Detect(std::string* dm , std::string*dmd ,std::string*path,int*sen ,int*thr){
     this->Images = new Mat[3];
     this->Flag = new bool;
@@ -106,11 +105,37 @@ int Detect::OpenCvDetect(Mat *img,double scale ){
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cnn Detect ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 int Detect::CnnDetect(Mat *img,double scale){
+    cv::Mat blob;
+    std::vector<cv::Mat> output;
+    cv::Mat row;
+    int flag = 0;
+    blob = cv::dnn::blobFromImage(img[0],1/255.0,cv::Size(416,416),(0,0,0),true,false);
 
-    return 0;
+    YoloNet->setInput(blob);
+    YoloNet->forward(output,getOutputsNames(*YoloNet));
+
+    img[0].copyTo(img[1]);
+    for(int num=0 ; num <int(output.size());num++)
+    {
+        for (int i = 0; i < output[num].rows; i++)
+        {
+            row = output[num].row(i);
+            assert(!row.empty());
+            //std::cout<<row.at<float>(0)<<std::endl;
+            if ( row.at<float>(5) > scale/5.0)
+            {
+                flag = 1;
+                cv::rectangle(img[0],cv::Point((row.at<float>(0)+row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)+row.at<float>(3)/2.0)*img->rows),
+                cv::Point((row.at<float>(0)-row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)-row.at<float>(3)/2.0)*img->rows),(123,111,130),2);
+                cv::putText(img[0],cv::format("Fire %f",row.at<float>(5)),cv::Point((row.at<float>(0)-row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)-row.at<float>(3)/2.0)*img->rows)
+                ,cv::FONT_ITALIC,0.75,(255,0,0),2);
+            }
+        }
+    }
+    return flag;
 }
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~OpenCV Cnn Detect~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+//*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~OpenCV Cnn Detect~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 int Detect::OpenCvAndCnnDetect(Mat *img,double scale){
     std::cout << "Both";
     return 0;
@@ -138,9 +163,27 @@ int Detect::SaveVideo(){
     return 0;
 
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Get Net Output Name~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+//Output : [vector<string> names]
+//obtain the name of the output layer,to ge the output of special layer
+std::vector<std::string> getOutputsNames( cv::dnn::Net& net)
+{
+    static std::vector<std::string> names;
+    if (names.empty())
+    {
+        //Get the indices of the output layers, i.e. the layers with unconnected outputs
+        std::vector<int> outLayers = net.getUnconnectedOutLayers();
 
+        //get the names of all the layers in the network
+        std::vector<std::string> layersNames = net.getLayerNames();
 
-
+        // Get the names of the output layers in names
+        names.resize(outLayers.size());
+        for (size_t i = 0; i < outLayers.size(); ++i)
+            names[i] = layersNames[outLayers[i] - 1];
+    }
+    return names;
+}
 
 
 

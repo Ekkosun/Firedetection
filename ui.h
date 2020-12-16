@@ -8,11 +8,11 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QFileDialog>
+#include <QMessageBox>
 #include <QThread>
 #include <QTimer>
 #include "beginbutton.h"
 #include "detect.h"
-
 
 //UI
 class UI : public QWidget
@@ -58,6 +58,7 @@ public:
     void imshow(Mat* , int );
     void clearLabel();
     void scaleAtEqualScale(int i);
+    int loadYolo(std::string path,std::string confg,cv::dnn::Net* net);
 };
 
 #endif // UI_H
