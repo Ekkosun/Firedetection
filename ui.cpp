@@ -2,6 +2,7 @@
 #include <QDebug>
 int detectedFrame = 0;
 int totalFrame = 0;
+bool flag = false;
 UI::UI(QWidget *parent)
     : QWidget(parent)
 {
@@ -12,6 +13,12 @@ UI::UI(QWidget *parent)
     buttonOfBegin->move(1030,650);
     buttonOfBegin->resize(75,23);
     buttonOfBegin->setText("开始检测");
+
+    loadModel = new QPushButton(this);
+    loadModel->move(1030,620);
+    loadModel->resize(75,23);
+    loadModel->setText("加载模型");
+    loadModel->setVisible(false);
 
     //set the  style of slider
     sliderOfSensitivity = new QSlider(Qt::Horizontal,this);
@@ -82,25 +89,29 @@ UI::UI(QWidget *parent)
     connect(buttonOfBegin,&BeginButton::Begin,this,&UI::beginInitial);
     connect(buttonOfBegin,&BeginButton::End,this,&UI::endDetect);
     connect(readAndWriteTimer,&QTimer::timeout,this,&UI::detectOneFrame);
+    connect(loadModel,&QPushButton::clicked,this,&UI::loadYolo);
 
 }
 
 UI::~UI()
 {
+    delete(this);
 }
 
 /*--------------------------------------------------------------------------beign initial----------------------------------------------------*/
 //input [detectmode , detectmethod ,videopath, sensitivity , thredhold]
 
 void UI::beginInitial(std::string* dm , std::string*dmd,std::string* path,int* sen ,int*thr){
+    flag = false;
+    detectedFrame = 0;
+    totalFrame = 0;
     if(this->detect==NULL)
     {
         this->detect = new Detect(dm,dmd,path,sen,thr);
-        qDebug() << QString::fromStdString(*detect->DetectMethod) ;
     }
 
     //set timer every 40ms read and write one frame
-    this->readAndWriteTimer->start(40);
+    this->readAndWriteTimer->start(30);
     this->detect->OpenCamera();
 }
 
@@ -127,16 +138,32 @@ void UI::detectOneFrame(){
     //handle the image
     detectedFrame += detectPtr(detect->Images,this->sliderOfSensitivity->value()/100.0);
     totalFrame += 1;
-    if(totalFrame%6==5&&detectedFrame<=this->sliderOfThrehold->value())
-        detectedFrame = 0;
-    else{
-        //提醒并开始录入
-    }
+    if(totalFrame%6==5){
+        if(detectedFrame<this->sliderOfThrehold->value()){
+            detectedFrame = 0;
+        }
+        else{
 
+            if(!this->detect->VideoSave->isOpened()){
+                time_t now = time(0);
+                tm *nowtm = localtime((&now));
+                char fmt[40];
+                sprintf(fmt,"%d-%d-%d-%d-%d-%d.mp4",1900+nowtm->tm_year,nowtm->tm_mon%12+1,nowtm->tm_mday,nowtm->tm_hour,nowtm->tm_min,nowtm->tm_sec);
+                this->detect->SaveVideo(fmt);
+                flag = true;
+            }
+            detectedFrame = 0;
+        }
+    }
+    if(flag)
+        this->detect->VideoSave->write(this->detect->Images[0]);
+    else{
+        if(this->detect->VideoSave!=NULL&&this->detect->VideoSave->isOpened())
+            this->detect->VideoSave->release();
+    }
     for (int i =0 ;i<num ;i++ )
         scaleAtEqualScale(i);
-
-    //show the image read and handled ，Opencv: 0.原图 1.带有标记的图 2.二值化图像
+    //show the image read and handled ，Opencv: 0.原图 1.带有标记的图 2.二值化图像  Yolo: 0.原图 1.带有标记的图
     imshow(detect->Images,num);
 
 }
@@ -146,6 +173,10 @@ void UI::endDetect(){
     //stop video capture
     if(detect->Video->isOpened()){
         detect->Video->release();
+    }
+    if(detect->VideoSave->isOpened())
+    {
+        detect->VideoSave->release();
     }
     if(buttonOfBegin->text()=="结束检测"){
 
@@ -169,7 +200,7 @@ void UI::imshow(cv::Mat*images,int num){
 
 }
 /*--------------------------------------------------------------------------clear Label----------------------------------------------------*/
-
+//when a video is over clear display
 void UI::clearLabel(){
     for (int i=0; i<3 ;i++ ) {
         this->imageLabel[i].clear();
@@ -189,26 +220,31 @@ void UI::scaleAtEqualScale(int i){
     else
         cv::resize(detect->Images[i],detect->Images[i],cv::Size(int(weight/min(weight_scale,height_scale)),int(height/min(weight_scale,height_scale))));
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Load Model~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Load Model~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 //Output :[-1:failed to load model,0:complete]
-int UI::loadYolo(std::string path,std::string confg,cv::dnn::Net* net){
+int UI::loadYolo(){
 
-    QMessageBox::warning(this,"加载模型错误","请选择模型位置及配置文件位置！");
+    std::string path,confg;
+    QMessageBox::warning(this,"加载模型","请选择模型位置及配置文件位置！");
     path = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
     confg = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
     try {
         if(path==""|confg=="")
-            *net = cv::dnn::readNetFromDarknet("yolov3-tiny.cfg","yolov3-tiny.backup");
+            *YoloNet = cv::dnn::readNetFromDarknet("yolov3-tiny.cfg","yolov3-tiny.backup");
         else
-            *net = cv::dnn::readNetFromDarknet(confg,path);
-        net->setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
-        net->setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+            *YoloNet = cv::dnn::readNetFromDarknet(confg,path);
+        YoloNet->setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
+        YoloNet->setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+        this->loadModel->setVisible(false);
+        this->radioButtonOfYolo->setDisabled(false);
 
     }  catch (...) {
         QMessageBox::warning(this,"Error","加载模型失败！");
         this->radioButtonOfYolo->setDisabled(true);
+        this->loadModel->setVisible(true);
         return -1;
 
     }
     return 0;
 }
+

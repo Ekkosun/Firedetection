@@ -8,6 +8,6 @@ int main(int argc, char *argv[])
     w.move(20,20);
     w.resize(1200,700);
     w.show();
-    w.loadYolo("","",YoloNet);
+    w.loadYolo();
     return a.exec();
 }

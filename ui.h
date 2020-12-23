@@ -13,7 +13,7 @@
 #include <QTimer>
 #include "beginbutton.h"
 #include "detect.h"
-
+#include <ctime>
 //UI
 class UI : public QWidget
 {
@@ -26,6 +26,9 @@ public:
 
     //begin button
     BeginButton *buttonOfBegin= NULL;
+
+    //load model
+    QPushButton *loadModel = NULL;
 
     //slide bar1-2 to set sensitivity and threhold
     QSlider* sliderOfSensitivity= NULL;
@@ -58,7 +61,8 @@ public:
     void imshow(Mat* , int );
     void clearLabel();
     void scaleAtEqualScale(int i);
-    int loadYolo(std::string path,std::string confg,cv::dnn::Net* net);
+    int loadYolo();
+    void load();
 };
 
 #endif // UI_H

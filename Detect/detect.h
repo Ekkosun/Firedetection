@@ -28,7 +28,7 @@ public:
     static int OpenCvDetect(Mat *,double );
     static int CnnDetect(Mat *,double);
     static int OpenCvAndCnnDetect(Mat *,double );
-    int SaveVideo();
+    int SaveVideo(std::string);
 };
 
 #endif // DETECT_H

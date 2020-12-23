@@ -75,13 +75,13 @@ int Detect::OpenCvDetect(Mat *img,double scale ){
     s0 = s0+s1+s2+1;                    //to prevent nan
     array[4] = s0> 4.5*mean(s0)[0];     //mask of 3*I>Tthrehold (I in HSI) , here using 4.5*mean(3*I) as Ithrehold
     s3 = 1-3*s3/(s0);                   //compute S in HSI
-    array[3] = (s3>=1.3*mean(s3)[0]);   //mask of S>Sthrehold (S in HSI) , here using 1.3*mean(S) as Sthrehold
+    array[3] = (s3>=scale*mean(s3)[0]);   //mask of S>Sthrehold (S in HSI) , here using 1.3*mean(S) as Sthrehold
 
 
     //compute mask of RGB
     array[0] = array[1]>=array[0];      //mask of G>B
     array[1] = array[2]>=array[1];      //mask of R>G
-    array[2] = (array[2]>=scale*avgofR)&array[1]&array[0]&array[3];//|array[4];  //mask of all, here using  the I(in HSI)  solves the hight problem )
+    array[2] = (array[2]>=scale*avgofR)&array[1]&array[0]&array[3]|array[4];  //mask of all, here using  the I(in HSI)  solves the hight problem )
 
 
     //dilate and erode to make smooth conters
@@ -109,7 +109,7 @@ int Detect::CnnDetect(Mat *img,double scale){
     std::vector<cv::Mat> output;
     cv::Mat row;
     int flag = 0;
-    blob = cv::dnn::blobFromImage(img[0],1/255.0,cv::Size(416,416),(0,0,0),true,false);
+    blob = cv::dnn::blobFromImage(img[0],1/255.0,cv::Size(416,416),cv::Scalar(0,0,0),true,false);
 
     YoloNet->setInput(blob);
     YoloNet->forward(output,getOutputsNames(*YoloNet));
@@ -126,9 +126,9 @@ int Detect::CnnDetect(Mat *img,double scale){
             {
                 flag = 1;
                 cv::rectangle(img[0],cv::Point((row.at<float>(0)+row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)+row.at<float>(3)/2.0)*img->rows),
-                cv::Point((row.at<float>(0)-row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)-row.at<float>(3)/2.0)*img->rows),(123,111,130),2);
+                cv::Point((row.at<float>(0)-row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)-row.at<float>(3)/2.0)*img->rows),cv::Scalar(123,111,130),2);
                 cv::putText(img[0],cv::format("Fire %f",row.at<float>(5)),cv::Point((row.at<float>(0)-row.at<float>(2)/2.0)*img->cols,(row.at<float>(1)-row.at<float>(3)/2.0)*img->rows)
-                ,cv::FONT_ITALIC,0.75,(255,0,0),2);
+                ,cv::FONT_ITALIC,0.75,cv::Scalar(255,0,0),2);
             }
         }
     }
@@ -142,8 +142,8 @@ int Detect::OpenCvAndCnnDetect(Mat *img,double scale){
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Save Video As  Mp4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-//OutPut :[-1:"NullPtr",-2:"Open Failed",0:"Normal"]s
-int Detect::SaveVideo(){
+//OutPut :[-1:"NullPtr",-2:"Open Failed",0:"Normal"]
+int Detect::SaveVideo(std::string path){
     //store the video as .mp4
     int myFourCC = VideoWriter::fourcc('m', 'p', '4', 'v');      
     
@@ -152,7 +152,7 @@ int Detect::SaveVideo(){
         //get the frame size
         Size size = Size(Video->get(CAP_PROP_FRAME_WIDTH),Video->get(CAP_PROP_FRAME_HEIGHT));
 
-        if(!VideoSave->open("new.mp4",myFourCC,25,size,true)){
+        if(!VideoSave->open(path,myFourCC,30,size,true)){
             return -2;
         }
         
@@ -187,26 +187,3 @@ std::vector<std::string> getOutputsNames( cv::dnn::Net& net)
 
 
 
-/*int main(){
-    
-    Detect a;
-    a.OpenCamera();
-    a.Video->read(a.Images[0]);
-    a.SaveVideo();
-    while (1)
-    {
-        a.Video->read(a.Images[0]);
-        a.VideoSave->write(a.Images[0]);
-        imshow("Test-A",a.Images[0]);
-        imshow("Test-R",a.Images[0]);
-        imshow("Test_G",a.Images[0]);
-        imshow("Test-B",a.Images[0]);
-        if(waitKey(20)==27){
-            break;
-        }
-    }
-    a.Video->release();
-    a.VideoSave->release();
-    return 0;
-
-}*/
