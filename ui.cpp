@@ -151,6 +151,9 @@ void UI::detectOneFrame(){
                 sprintf(fmt,"%d-%d-%d-%d-%d-%d.mp4",1900+nowtm->tm_year,nowtm->tm_mon%12+1,nowtm->tm_mday,nowtm->tm_hour,nowtm->tm_min,nowtm->tm_sec);
                 this->detect->SaveVideo(fmt);
                 flag = true;
+
+                //发送短信
+                sendMessage();
             }
             detectedFrame = 0;
         }
@@ -197,6 +200,9 @@ void UI::imshow(cv::Mat*images,int num){
         img = QImage((const unsigned char*)(images[i].data),images[i].cols,images[i].rows,QImage::Format_RGB888);
         imageLabel[i].setPixmap(QPixmap::fromImage(img));
     }
+    if(num ==2)
+        imageLabel[2].clear();
+
 
 }
 /*--------------------------------------------------------------------------clear Label----------------------------------------------------*/
@@ -226,8 +232,8 @@ int UI::loadYolo(){
 
     std::string path,confg;
     QMessageBox::warning(this,"加载模型","请选择模型位置及配置文件位置！");
-    path = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
-    confg = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
+    path = QFileDialog::getOpenFileName(nullptr,"请选择模型","","*.*").toStdString();
+    confg = QFileDialog::getOpenFileName(nullptr,"请选择配置文件","","*.*").toStdString();
     try {
         if(path==""|confg=="")
             *YoloNet = cv::dnn::readNetFromDarknet("yolov3-tiny.cfg","yolov3-tiny.backup");
@@ -247,4 +253,43 @@ int UI::loadYolo(){
     }
     return 0;
 }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Send Message~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+void UI::sendMessage(){
+    QNetworkAccessManager *networkAccessManager = NULL;
+    QByteArray root;
+    QNetworkRequest * request = NULL;
+    root.append("Account=17633957883&Pwd=64cdd24829c46bf95c8111333&Content=Test&SignId=370481&Mobile=17633957883");
+    networkAccessManager = new QNetworkAccessManager(this);
+    request = new QNetworkRequest();
+    connect(networkAccessManager,&QNetworkAccessManager::finished,this,&UI::requestfinished);
+    QUrl url(QString("http://api.feige.ee/SmsService/Send"));
+    request->setUrl(url);
+    request->setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded");
+    request->setRawHeader("Content-Type","application/x-www-form-urlencoded");
+    networkAccessManager->post(*request,root);
+
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Message Receive~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+void UI::requestfinished(QNetworkReply *reply) {
+    // 获取http状态码
+    QVariant statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+    if(statusCode.isValid())
+        std::cout << "status code=" << statusCode.toInt()<<"\n";
+
+    QVariant reason = reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+    if(reason.isValid())
+        std::cout << "reason=" << reason.toString().toStdString()<<"\n";
+
+    QNetworkReply::NetworkError err = reply->error();
+    if(err != QNetworkReply::NoError) {
+        std::cout << "Failed: " << reply->errorString().toStdString()<<"\n";
+    }
+    else {
+        // 获取返回内容
+        std::cout << reply->readAll().toStdString()<<"\n";
+    }
+}
+
+
 

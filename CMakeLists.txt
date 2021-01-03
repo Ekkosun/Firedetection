@@ -32,8 +32,8 @@ if(NOT OpenCV_FOUND)
     message(FATAL_ERRO "failed to find OpenCV")
 endif(NOT OpenCV_FOUND)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets LinguistTools Network REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets LinguistTools Network REQUIRED)
 
 set(TS_FILES Demo_zh_CN.ts)
 message("${PROJECT_SOURCE_DIR}")
@@ -69,6 +69,8 @@ target_include_directories(Demo
     ${PROJECT_SOURCE_DIR}/Detect
 )
 target_link_libraries(Demo PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Demo PRIVATE Qt${QT_VERSION_MAJOR}::Network)
 target_link_libraries(Demo PUBLIC "${OpenCV_LIBS}")
+
 
 #qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})

@@ -34,7 +34,7 @@ int BeginButton::checkParam(){
         return -1;
     }
     if(*this->detectMode=="离线检测"){
-        *this->videoPath = QFileDialog::getOpenFileName(nullptr,"/","*.*").toStdString();
+        *this->videoPath = QFileDialog::getOpenFileName(nullptr,"请选择要检测的视频","","*.*").toStdString();
     }
     return 0;
 

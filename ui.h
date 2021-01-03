@@ -11,6 +11,12 @@
 #include <QMessageBox>
 #include <QThread>
 #include <QTimer>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkRequest>
+#include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <qnetwork.h>
+#include <QUrl>
 #include "beginbutton.h"
 #include "detect.h"
 #include <ctime>
@@ -63,6 +69,8 @@ public:
     void scaleAtEqualScale(int i);
     int loadYolo();
     void load();
+    void sendMessage();
+    void requestfinished(QNetworkReply *reply);
 };
 
 #endif // UI_H
